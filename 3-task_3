@@ -1,0 +1,19 @@
+![task_3](imgs/IMG_20231030_053157.jpg)
+
+Specifics about the Infrastructure:
+
+Server 1: This server hosts the web server (Nginx) component. It handles incoming HTTP requests and serves web pages.
+
+Server 2: This server hosts the application server component. It processes dynamic content, interacts with the database, and generates responses.
+
+Server 3: This server hosts the database component. It manages data storage and retrieval for the application.
+
+Load Balancers: Load balancers are added to distribute incoming traffic across multiple servers for scalability and availability. In this setup, each component (Web, App, DB) has its own server, and each server has its own load balancer.
+
+Explanation for Additional Elements:
+
+Load Balancers: Added to distribute incoming traffic, ensuring scalability and preventing overloading of any single server. Each component having its own server and load balancer provides better resource isolation and scalability.
+
+Split Components on Separate Servers: By separating components onto dedicated servers, we can optimize resource allocation for each function. This allows for better security practices and can prevent one component from affecting others in case of resource spikes or failures.
+
+This design provides a robust, scalable, and secure infrastructure with dedicated servers for each component and load balancers for high availability and scalability.

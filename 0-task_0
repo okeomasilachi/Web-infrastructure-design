@@ -1,0 +1,29 @@
+![task_0](imgs/IMG_20231030_053106.jpg)
+
+
+User Requesting Website:
+
+A user wants to access the website by typing "www.foobar.com" into their web browser.
+Specifics about the Infrastructure:
+
+Server: The physical or virtual machine that hosts all components of the website.
+
+Domain Name (foobar.com): A human-readable address that allows users to access the website. It's configured to point to the server's IP address (8.8.8.8) using a DNS record.
+
+DNS Record (www): The DNS record type used for "www.foobar.com" is a CNAME (Canonical Name) record. It aliases the "www" subdomain to the main domain name (foobar.com).
+
+Web Server (Nginx): Nginx handles incoming HTTP requests, processes them, and serves appropriate content. It can serve static content or forward dynamic requests to the application server.
+
+Application Server: This server executes application code to generate dynamic content. It processes user inputs, interacts with databases, and generates web pages on-the-fly.
+
+Database (MySQL): It stores and manages data used by the application. It provides a structured way to organize, retrieve, and update information.
+
+Communication with User's Computer: The server communicates with the user's computer over the HTTP protocol. This defines how data is formatted and transmitted between the client (user's computer) and the server.
+
+Issues with this Infrastructure:
+
+Single Point of Failure (SPOF): This infrastructure has a single server, which means if it fails, the entire website will become inaccessible. To address this, redundancy or failover solutions could be implemented.
+
+Downtime for Maintenance: When maintenance is needed, such as deploying new code or restarting the web server, the website may experience downtime. This can impact user experience.
+
+Limited Scalability: If there is a sudden surge in incoming traffic, a single server may struggle to handle the load. Scaling options, such as adding more servers or using cloud services, should be considered for improved scalability.

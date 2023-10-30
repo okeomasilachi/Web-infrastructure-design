@@ -1,0 +1,33 @@
+![task_2](imgs/IMG_20231030_053128.jpg)
+
+Specifics about the Infrastructure:
+
+Server 1 and Server 2: These servers host the web server, application server, and database components. Adding multiple servers provides redundancy and improves availability. Each server also has its own set of firewalls for added security.
+
+Firewalls: Firewalls are added to provide an additional layer of security. They control incoming and outgoing network traffic based on an applied rule set. They help protect against unauthorized access and potential threats.
+
+SSL Certificate: An SSL certificate is used to enable HTTPS, providing encryption and securing the communication between the user's browser and the web server. This ensures that data exchanged is confidential and protected from eavesdropping.
+
+Load Balancer (HAProxy): The load balancer distributes incoming traffic across multiple servers for scalability and availability. It helps prevent overloading of a single server and provides failover capabilities.
+
+Monitoring Clients: These clients collect data on the performance, availability, and security of the infrastructure. They send this data to a monitoring tool (e.g., Sumo Logic) for analysis.
+
+Specifics about Additional Elements:
+
+Firewalls: Added for enhanced security. They filter incoming and outgoing traffic to prevent unauthorized access and protect against potential threats.
+
+SSL Certificate: Used to serve traffic over HTTPS, ensuring that data transmitted between the user and the website is encrypted and secure.
+
+Monitoring: Used to track the performance, availability, and security of the infrastructure. It helps identify and resolve issues proactively.
+
+Issues with this Infrastructure:
+
+Terminating SSL at the Load Balancer Level:
+
+Terminating SSL at the load balancer means that the communication between the load balancer and servers is not encrypted. This could be a concern if there's a need for end-to-end encryption.
+Single MySQL Server for Writes:
+
+If the MySQL server capable of accepting writes fails, it could lead to data unavailability. Implementing a replication or clustering solution can mitigate this issue.
+Identical Components on Servers:
+
+Having identical components on all servers might lead to a single point of failure. Diversifying components (e.g., using different web servers) can improve fault tolerance.

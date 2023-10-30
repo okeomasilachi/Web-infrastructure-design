@@ -1,0 +1,41 @@
+![task_1](imgs/IMG_20231030_053128.jpg)
+
+Specifics about the Infrastructure:
+
+Server 1 and Server 2: These servers provide redundancy and improve availability. If one server fails, the other can continue serving traffic.
+
+Load Balancer (HAProxy): The load balancer distributes incoming traffic across multiple servers. This provides scalability and ensures no single server is overwhelmed.
+
+Web Server (Nginx): The web server handles incoming HTTP requests. It can serve static content directly and forward dynamic requests to the application server.
+
+Application Server: This server executes application code to generate dynamic content. It processes user inputs, interacts with the database, and generates web pages on-the-fly.
+
+Database (MySQL): The database manages data storage and retrieval for the application. It's a critical component for storing and managing website data.
+
+Specifics about Additional Elements:
+
+Servers 1 and 2: Added for redundancy and improved availability. If one server fails, the other can continue serving traffic.
+
+Load Balancer (HAProxy): Added to distribute incoming traffic, ensuring scalability and preventing overloading of any single server.
+
+Database (MySQL): Added to provide persistent storage for the application.
+
+Distribution Algorithm (Load Balancer):
+
+The load balancer is configured with a Round Robin algorithm. It forwards each new request to the next server in the list, distributing the traffic evenly.
+Active-Active vs. Active-Passive Setup:
+
+The setup is Active-Active. Both servers are actively serving traffic simultaneously. In an Active-Passive setup, one server is active while the other is on standby, only becoming active if the primary server fails.
+Primary-Replica (Master-Slave) Database Cluster:
+
+In a Primary-Replica cluster, the Primary (Master) node handles write operations and replicates data to the Replica (Slave) node. The Replica node can handle read operations but cannot perform writes directly.
+Difference between Primary and Replica Nodes:
+
+The Primary node is responsible for handling write operations, making it the authoritative source of data. The Replica node receives data through replication from the Primary and can serve read requests but cannot perform writes directly.
+Issues with this Infrastructure:
+
+Single Point of Failure (SPOF): The load balancer is currently a single point of failure. If it fails, traffic distribution will be disrupted. Implementing a high-availability setup for the load balancer would address this issue.
+
+Security Issues: There are no firewalls and no HTTPS in this setup, which could expose the infrastructure to potential security vulnerabilities. Implementing firewalls and enabling HTTPS encryption is crucial for security.
+
+No Monitoring: Without monitoring, it's difficult to track the performance and health of the infrastructure. Implementing a monitoring solution would allow for proactive issue identification and resolution.
